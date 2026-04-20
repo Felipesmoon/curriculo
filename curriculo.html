@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Felipe Montenegro - Currículo com Foto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="resume">
+        <!-- Profile Header with Photo Section -->
+        <div class="profile-header">
+            <!-- Mock profile photo -->
+            <div class="photo-container">
+                <img id="profileImage" class="profile-photo" src="perfil.jpg" alt="Foto de perfil">
+            </div>
+            
+            <div class="name-title-area">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                    <h1>Felipe Montenegro</h1>
+                    <button onclick="printResume()" class="print-btn">🖨️ Imprimir Currículo</button>
+                </div>
+                <div class="professional-tag">🎯 Promotor Técnico | Suporte & Treinamento | Vendas Técnicas</div>
+            </div>
+        </div>
+
+        <!-- Contact bar with functional WhatsApp -->
+        <div class="contact-bar">
+            <span class="contact-item">📍 Fortaleza-CE</span>
+            <span class="contact-item">📞 (85) 98772-8843</span>
+            <span class="contact-item">✉️ felipesmonte@outlook.com</span>
+            <a href="javascript:void(0);" onclick="openWhatsApp()" class="contact-item whatsapp-link">
+                📱 Falar no WhatsApp
+            </a>
+        </div>
+
+        <!-- Resumo / Perfil Profissional -->
+        <div class="section">
+            <div class="section-title">Perfil Profissional</div>
+            <div class="summary-text">
+                Profissional com sólida experiência como Promotor Técnico, tendo atuado em empresas de destaque como
+                <strong>Makita do Brasil</strong> e <strong>Stanley Black &amp; Decker</strong>.
+                Ao longo da minha trajetória, desempenhei atividades de suporte técnico, treinamento de produtos e
+                representação comercial, sempre com foco na excelência do atendimento e no alcance de resultados.
+                Dotado de forte capacidade de comunicação, proatividade e orientação a resultados.
+            </div>
+        </div>
+
+        <!-- Habilidades -->
+        <div class="section">
+            <div class="section-title">Habilidades</div>
+            <ul class="skills-list">
+                <li><strong>Relacionamento</strong> com o cliente: empatia, escuta ativa e foco na solução de problemas.</li>
+                <li><strong>Visão comercial</strong>: identificação de oportunidades e recomendação de produtos.</li>
+                <li><strong>Comunicação técnica</strong>: clareza ao explicar funcionalidades e orientações de uso.</li>
+                <li><strong>Inglês</strong>: Intermediário (em desenvolvimento ativo).</li>
+            </ul>
+        </div>
+
+        <!-- Experiência profissional -->
+        <div class="section">
+            <div class="section-title">Experiência</div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Promotor técnico pleno</span>
+                    <span class="job-company">Makita do Brasil - SP</span>
+                    <span class="job-date">07/2021 – ATUALMENTE</span>
+                </div>
+                <ul class="job-duties">
+                    <li>Presto suporte técnico especializado a clientes sobre uso correto, segurança e manutenção de equipamentos.</li>
+                    <li>Realizo treinamentos para clientes, distribuidores e equipes internas sobre o portfólio da marca.</li>
+                    <li>Identifico oportunidades de vendas com base nas necessidades dos clientes, recomendando soluções alinhadas ao mercado.</li>
+                    <li>Represento a empresa em feiras, workshops e eventos do setor, fortalecendo relacionamento com parceiros.</li>
+                </ul>
+            </div>
+            
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Promotor técnico júnior</span>
+                    <span class="job-company">Stanley Black & Decker - SP</span>
+                    <span class="job-date">05/2019 – 06/2021</span>
+                </div>
+                <ul class="job-duties">
+                    <li>Conduzi treinamentos e demonstrações técnicas sobre o portfólio da empresa para clientes, distribuidores e times internos.</li>
+                    <li>Contribuí para o uso eficiente dos produtos e para o fortalecimento da imagem da marca no mercado.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Educação e formação -->
+        <div class="section">
+            <div class="section-title">Educação</div>
+            <div class="education-item">
+                <div class="edu-title">
+                    <span>Análise e Desenvolvimento de Sistemas</span>
+                    <span class="edu-date">01/2023</span>
+                </div>
+                <div class="edu-detail">Faculdade CDL, Fortaleza-CE</div>
+                <div class="highlight-monitor">🏅 Monitor da cadeira de Lógica de Programação</div>
+            </div>
+        </div>
+        
+        <hr />
+    </div>
+
+    <script>
+        // Resume JavaScript functionality
+
+        function printResume() {
+            window.print();
+        }
+
+        function openWhatsApp() {
+            const phoneNumber = "5585987728843";
+            const message = "Olá! Vi seu currículo e gostaria de conversar.";
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+            if (isMobile) {
+                window.location.href = whatsappUrl;
+            } else {
+                window.open(whatsappUrl, '_blank');
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                printResume();
+            }
+        });
+
+        window.printResume = printResume;
+        window.openWhatsApp = openWhatsApp;
+    </script>
+</body>
+</html>
