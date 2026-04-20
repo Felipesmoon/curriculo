@@ -450,6 +450,30 @@ hr {
     color: white;
 }
 
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: var(--light-bg);
+    border-radius: var(--border-radius);
+    margin-top: 1rem;
+    margin-left: -2.2rem;
+    margin-right: -2.2rem;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+
+footer p {
+    margin: 0.3rem 0;
+    line-height: 1.4;
+}
+
+footer p:first-child {
+    font-weight: 500;
+}
+
 /* Responsive design */
 @media (max-width: 650px) {
     .resume {
