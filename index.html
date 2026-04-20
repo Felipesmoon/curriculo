@@ -103,36 +103,5 @@
         
         <hr />
     </div>
-
-    <script>
-        // Resume JavaScript functionality
-
-        function printResume() {
-            window.print();
-        }
-
-        function openWhatsApp() {
-            const phoneNumber = "5585987728843";
-            const message = "Olá! Vi seu currículo e gostaria de conversar.";
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-            if (isMobile) {
-                window.location.href = whatsappUrl;
-            } else {
-                window.open(whatsappUrl, '_blank');
-            }
-        }
-
-        document.addEventListener('keydown', function(e) {
-            if (e.ctrlKey && e.key === 'p') {
-                printResume();
-            }
-        });
-
-        window.printResume = printResume;
-        window.openWhatsApp = openWhatsApp;
-    </script>
 </body>
 </html>
