@@ -443,6 +443,12 @@ footer p:first-child {
     font-weight: 500;
 }
 
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
 /* Responsive design */
 .photo-controls {
     display: flex;
@@ -505,6 +511,13 @@ footer p:first-child {
 
     .skills-list {
         grid-template-columns: 1fr;
+    }
+
+    footer {
+        margin-left: -1.2rem;
+        margin-right: -1.2rem;
+        padding: 0.8rem 0;
+        font-size: 0.8rem;
     }
 }
 
