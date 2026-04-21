@@ -190,14 +190,15 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     color: #0f2e44;
+    display: block;
 }
 
 .exp-company {
-    font-weight: 600;
-    color: #2c6a4e;
-    display: inline-block;
+    font-weight: 500;
+    color: #2c5c7c;
+    display: block;
     font-size: 0.95rem;
-    margin-left: 0.25rem;
+    margin-bottom: 0.25rem;
 }
 
 .exp-date {
@@ -364,8 +365,7 @@ footer p {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #1f8b4c;
-    color: #ffffff;
+    
     border: none;
     border-radius: 50%;
     width: 50px;
@@ -378,6 +378,5 @@ footer p {
 }
 
 .print-btn:hover {
-    background: #25a35a;
     transform: scale(1.1);
 }
