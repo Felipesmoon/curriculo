@@ -217,17 +217,19 @@ body {
 }
 
 .exp-description li {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     gap: 0.7rem;
     margin-bottom: 0.65rem;
     font-size: 0.92rem;
     color: #2c3e4e;
+    line-height: 1.5;
 }
 
 .exp-description li i {
     color: #1f8b4c;
     font-size: 0.8rem;
-    margin-top: 0.2rem;
+    align-self: start;
     width: 1.1rem;
 }
 
