@@ -1,2 +1,3 @@
-yaml
-theme: jekyll-theme-minimal
+remote_theme: pages-themes/minimal
+title: Meu Blog Pessoal
+description: Um blog sobre tecnologia
