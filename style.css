@@ -1,12 +1,384 @@
-@import "{{ site.theme }}";
-
-/* Meus estilos personalizados */
-.site-header {
-  background: #2c3e50;
-  padding: 20px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.post-title {
-  font-size: 2em;
-  color: #3498db;
+body {
+    background: #eef2f5;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.5;
+    color: #1e2a3e;
+    padding: 2rem 1.5rem;
+}
+
+.resume-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.02);
+    overflow: hidden;
+}
+
+.resume-inner {
+    padding: 2.2rem 2.5rem;
+}
+
+/* cabeçalho com foto e texto lado a lado */
+.header-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+    align-items: center;
+    margin-bottom: 1.8rem;
+    border-bottom: 2px solid #e9edf2;
+    padding-bottom: 1.6rem;
+}
+
+.profile-picture {
+    flex-shrink: 0;
+}
+
+.profile-picture img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background: #f0f4f9;
+}
+
+.header-info {
+    flex: 1;
+}
+
+.name {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #0a2942;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #2c5a7a;
+    background: #eef3fc;
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 40px;
+    letter-spacing: 0.3px;
+}
+
+.contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem 2rem;
+    margin-top: 1.2rem;
+    background: #fafcff;
+    padding: 0.8rem 0 0.2rem 0;
+    border-radius: 16px;
+}
+
+.contact-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.95rem;
+    color: #2c3e50;
+    background: #ffffff;
+    padding: 0.3rem 0;
+}
+
+.contact-item i {
+    width: 1.3rem;
+    font-size: 1.1rem;
+    color: #1f6392;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #1e4663;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.contact-item a:hover {
+    color: #0a7cbd;
+    text-decoration: underline;
+}
+
+.whatsapp-link {
+    background: #e9f6ef;
+    padding: 0.25rem 1rem 0.25rem 0.75rem;
+    border-radius: 40px;
+    font-weight: 600;
+    color: #1f8b4c;
+}
+
+.whatsapp-link i {
+    color: #25a35a;
+}
+
+.section {
+    margin-top: 2rem;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #0f3b5c;
+    border-left: 4px solid #1f8b4c;
+    padding-left: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.profile-text {
+    background: #f9fbfd;
+    padding: 1.2rem 1.4rem;
+    border-radius: 20px;
+    color: #1e2f3d;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 0.25rem;
+    border: 1px solid #eef2f8;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: #1e3a4d;
+}
+
+.skills-list li i {
+    color: #1f8b4c;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+    width: 1.2rem;
+}
+
+.experience-item {
+    margin-bottom: 2rem;
+}
+
+.exp-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+}
+
+.exp-role {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f2e44;
+    display: block;
+}
+
+.exp-company {
+    font-weight: 500;
+    color: #2c5c7c;
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+}
+
+.exp-date {
+    font-size: 0.85rem;
+    background: #ecf3f9;
+    padding: 0.2rem 0.7rem;
+    border-radius: 30px;
+    font-weight: 500;
+    color: #2b5e7a;
+}
+
+.exp-description {
+    list-style: none;
+    padding-left: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.exp-description li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.7rem;
+    margin-bottom: 0.65rem;
+    font-size: 0.92rem;
+    color: #2c3e4e;
+    line-height: 1.5;
+}
+
+.exp-description li i {
+    color: #1f8b4c;
+    font-size: 0.8rem;
+    align-self: start;
+    width: 1.1rem;
+}
+
+.education-block {
+    background: #fbfeff;
+    border-radius: 20px;
+    padding: 0.2rem 0;
+}
+
+.edu-degree {
+    font-weight: 800;
+    font-size: 1rem;
+    color: #0f2e44;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.edu-detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0.4rem 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: #2c5c7c;
+}
+
+.edu-institution {
+    font-weight: 500;
+}
+
+.edu-date {
+    background: #eef2f6;
+    padding: 0.2rem 0.7rem;
+    border-radius: 30px;
+    font-size: 0.8rem;
+}
+
+.monitor-note {
+    margin-top: 0.65rem;
+    background: #f0f6fa;
+    padding: 0.55rem 1rem;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    color: #105a3c;
+    display: inline-block;
+    width: auto;
+    border-left: 3px solid #1f8b4c;
+}
+
+.monitor-note i {
+    margin-right: 8px;
+    color: #1f8b4c;
+}
+
+.divider-light {
+    height: 1px;
+    background: #e4e9f0;
+    margin: 1.2rem 0 1.6rem 0;
+}
+
+@media (max-width: 720px) {
+    body {
+        padding: 1rem;
+    }
+
+    .resume-inner {
+        padding: 1.6rem;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .header-row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-bar {
+        justify-content: center;
+    }
+
+    .exp-header {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    .exp-date {
+        align-self: flex-start;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+
+    .profile-picture img {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+.contact-item .fa-whatsapp {
+    color: #2e9b5e;
+}
+
+.whatsapp-link:hover {
+    background: #dcfce8;
+    transform: scale(1.01);
+    transition: 0.1s;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+    background: #f9fbfd;
+    border-top: 1px solid #e9edf2;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+.print-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s;
+    z-index: 1000;
+}
+
+.print-btn:hover {
+    transform: scale(1.1);
 }
